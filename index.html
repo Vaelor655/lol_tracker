@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LoL Team Tracker</title>
+  <meta name="color-scheme" content="dark light" />
+  <link rel="stylesheet" href="./common.css" />
+  <link rel="stylesheet" href="./view-cards.css" />
+</head>
+
+<body data-view="cards">
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="wrap topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">💑</div>
+      <div class="brandText">
+        <h1>Tracker</h1>
+        <p>🐀</p>
+      </div>
+    </div>
+
+    <div class="topActions">
+      <div class="seg" role="tablist" aria-label="Queue">
+        <button class="segBtn active" id="queueSolo" type="button">SoloQ</button>
+        <button class="segBtn" id="queueFlex" type="button">Flex</button>
+      </div>
+
+      <button class="btn" id="refreshBtn" type="button" title="Force un refresh côté serveur (cooldown 2 min)">
+        <span class="btnIcon" aria-hidden="true">⟳</span>
+        Refresh
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="panelTop">
+        <div class="leftControls">
+          <div class="search">
+            <span class="searchIcon" aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Rechercher un joueur…" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="rightControls">
+          <div class="stats" aria-label="Stats">
+            <div class="stat">
+              <div class="k">Joueurs</div>
+              <div class="v" id="statPlayers">—</div>
+            </div>
+            <div class="stat">
+              <div class="k">Queue</div>
+              <div class="v" id="statQueue">—</div>
+            </div>
+            <div class="stat">
+              <div class="k">Refresh</div>
+              <div class="v" id="statRefresh">—</div>
+            </div>
+            <div class="stat">
+              <div class="k">Statut</div>
+              <div class="v" id="status">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="banner" class="banner" hidden>
+        <div class="bannerTitle" id="bannerTitle">Info</div>
+        <div class="bannerText" id="bannerText"></div>
+      </div>
+
+      <div id="cardsView" class="cardsView" aria-label="Vue cartes"></div>
+
+      <div class="empty" id="empty" hidden>
+        <div class="emptyTitle">Rien à afficher</div>
+        <div class="emptyText">Aucun joueur ne correspond aux filtres.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
