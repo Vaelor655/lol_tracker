@@ -4,7 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LoL Team Tracker</title>
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- League of Legends typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Exo+2:wght@300;400;600;700;900&display=swap" />
+
   <link rel="stylesheet" href="./common.css" />
   <link rel="stylesheet" href="./view-cards.css" />
 </head>
@@ -14,16 +20,16 @@
 
   <header class="wrap topbar">
     <div class="brand">
-      <div class="logo" aria-hidden="true">💑</div>
+      <div class="logo" aria-hidden="true">⚔️</div>
       <div class="brandText">
         <h1>Tracker</h1>
-        <p>🐀</p>
+        <p>Suivi d'équipe</p>
       </div>
     </div>
 
     <div class="topActions">
       <div class="seg" role="tablist" aria-label="Queue">
-        <button class="segBtn active" id="queueSolo" type="button">SoloQ</button>
+        <button class="segBtn active" id="queueSolo" type="button">Solo Q</button>
         <button class="segBtn" id="queueFlex" type="button">Flex</button>
       </div>
 
@@ -74,7 +80,7 @@
       <div id="cardsView" class="cardsView" aria-label="Vue cartes"></div>
 
       <div class="empty" id="empty" hidden>
-        <div class="emptyTitle">Rien à afficher</div>
+        <div class="emptyTitle">Aucun résultat</div>
         <div class="emptyText">Aucun joueur ne correspond aux filtres.</div>
       </div>
     </section>
